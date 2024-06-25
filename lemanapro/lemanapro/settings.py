@@ -1,4 +1,4 @@
-# Scrapy settings for divanpars project
+# Scrapy settings for lemanapro project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,18 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-import datetime
+BOT_NAME = "lemanapro"
 
-
-
-BOT_NAME = "divanpars"
-
-SPIDER_MODULES = ["divanpars.spiders"]
-NEWSPIDER_MODULE = "divanpars.spiders"
+SPIDER_MODULES = ["lemanapro.spiders"]
+NEWSPIDER_MODULE = "lemanapro.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "divanpars (+http://www.yourdomain.com)"
+#USER_AGENT = "lemanapro (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -49,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "divanpars.middlewares.DivanparsSpiderMiddleware": 543,
+#    "lemanapro.middlewares.LemanaproSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "divanpars.middlewares.DivanparsDownloaderMiddleware": 543,
+#    "lemanapro.middlewares.LemanaproDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -67,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "divanpars.pipelines.DivanparsPipeline": 300,
+#    "lemanapro.pipelines.LemanaproPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -91,11 +87,9 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = "scrapy.extensions.httpcache.FilesystemCacheStorage"
 
-current_time = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-
 # Set settings whose default value is deprecated to a future-proof value
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
 FEED_FORMAT = "json"
-FEED_URI = f"output_{current_time}.json"
+FEED_URI = "output.json"
