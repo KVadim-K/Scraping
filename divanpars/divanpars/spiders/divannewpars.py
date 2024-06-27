@@ -15,5 +15,7 @@ class DivannewparsSpider(scrapy.Spider):
             yield {
                 'name': divan.css('div.lsooF span::text').get(),
                 'price': divan.css('div.pY3d2 span::text').get(),
-                'url': divan.css('a::attr(href)').get()
+                'url': response.urljoin(divan.css('a::attr(href)').get())  # response.urljoin() - объединяет две ссылки
             }
+
+# scrapy crawl divannewpars -o output.csv -t csv # Команда для запускаем парсинга в терминале
